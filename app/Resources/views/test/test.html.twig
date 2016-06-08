@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div id="container">
+        <form method="POST"  action="/test">
+        <div id="calendar">
+            <p>Выберите дату:
+                <input type="date" name="calendar" value="2016-06-08"
+                       max="2016-06-08" min="2012-05-29">
+                <input type="submit" value="Отправить"></p>
+        </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('https://code.jquery.com/jquery-2.2.4.min.js') }}"></script>
+{% endblock %}

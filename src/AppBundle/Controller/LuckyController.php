@@ -9,10 +9,32 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
-class LuckyController
+class LuckyController extends Controller
 {
+    /**
+     * @Route("/test")
+     * @Method("POST")
+     */
+    public function requ(Request $request){
+        $value = $request->getPathInfo();
+        print_r($value);
+        return new Response;
+    }
+    /**
+     * @Route("/test")
+     * @Method("GET")
+     */
+    public function testAction(){
+        return $this->render('test\test.html.twig');
+    }
+    public function loginAction(Request $request){
+        var_dump("we are here");
+    }
     /**
      * @Route("/lucky/number")
      */
